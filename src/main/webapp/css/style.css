@@ -1,46 +1,55 @@
- /* Adjustments for the sidebar */
- .sidebar {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #333333;
-    padding-top: 50px; /* Match the height of your navbar */
-  }
-  /* Adjustments for the content */
-  .content {
-    margin-left: 250px; /* Match the width of your sidebar */
-    padding: 20px;
-  }
+/* Adjustments for the sidebar */
+.sidebar {
+	height: 100%;
+	width: 250px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #333333;
+	padding-top: 50px; /* Match the height of your navbar */
+}
+/* Adjustments for the content */
+.content {
+	margin-left: 250px; /* Match the width of your sidebar */
+	padding: 20px;
+}
 
- a {
-  color: #fff;
+.nav-link {
+	display: block;
+	padding: .5rem 1rem;
+	color: #fff;
+}
+
+.nav-link:hover {
+	display: block;
+	padding: .5rem 1rem;
+	color: #fff;
+}
+
+a {
+	text-decoration: none;
 }
 
 a:hover {
-    color: #fff;
+	text-decoration: none;
 }
 
 button {
-    gap: 2px;
+	gap: 2px;
 }
 
-@media (max-width: 768px) {
-
-    .sidebar {
-      height: 100%;
-      width: 180px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: #333333;
-      padding-top: 50px; /* Match the height of your navbar */
-    }
-    
-    .content {
-        margin-left: 180px; /* Match the width of your sidebar */
-        padding: 20px;
-      }
-  
-  }
+@media ( max-width : 768px) {
+	.sidebar {
+		height: 100%;
+		width: 180px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: #333333;
+		padding-top: 50px; /* Match the height of your navbar */
+	}
+	.content {
+		margin-left: 180px; /* Match the width of your sidebar */
+		padding: 20px;
+	}
+}

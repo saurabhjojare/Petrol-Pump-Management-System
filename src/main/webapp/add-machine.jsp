@@ -5,11 +5,12 @@ s
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Add Pumps</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="css\style.css">
+    <link rel="icon" type="image/png" href="img\favicon.png">
     <style>
     </style>
   </head>
@@ -22,7 +23,7 @@ s
         <div class="container mt-5">
           <div class="row justify-content-center">
             <div class="col-md-6">
-              <h5>Add New Machine</h5>
+              <h5>Install New Pump</h5>
 
               <div class="input-group">
                 <input type="text" name="machineCode" class="form-control" placeholder="Enter Machine Code"

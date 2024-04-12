@@ -18,6 +18,7 @@ boolean isIndexPage = currentPage.endsWith("admin_dashboard.jsp"); // Check if i
 	rel="stylesheet">
 <!-- Custom CSS -->
 <link rel="stylesheet" type="text/css" href="css\style.css">
+<link rel="icon" type="image/png" href="img\favicon.png">
 <style>
 </style>
 </head>
@@ -32,13 +33,13 @@ boolean isIndexPage = currentPage.endsWith("admin_dashboard.jsp"); // Check if i
 		<ul class="nav flex-column">
 			<li class="nav-item"><a class="nav-link" data-toggle="collapse"
 				href="#homeSubMenu" role="button" aria-expanded="false"
-				aria-controls="homeSubMenu">Machine</a>
+				aria-controls="homeSubMenu">Fuel Dispenser</a>
 				<div class="collapse" id="homeSubMenu">
 					<ul class="nav flex-column">
 						<li class="nav-item"><a class="nav-link"
-							href="add-machine.jsp">Add Machine</a></li>
+							href="add-machine.jsp">Add Pumps</a></li>
 						<li class="nav-item"><a class="nav-link" href="view-machine.jsp">View
-								Machine</a></li>
+								Pumps</a></li>
 					</ul>
 				</div></li>
 			<li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
