@@ -4,7 +4,8 @@
 The Petrol Pump Management System is a web-based application designed to streamline the operations of a petrol pump. It provides functionalities for managing fuel transactions, inventory, and employee assignments efficiently.
 
 ## Features
-- **Secure Login:** Employees and administrators can securely log in to the system with authentication mechanisms.
+- **Secure Login:**
+  - Employees and administrators can securely log in to the system with authentication mechanisms.
 - **Employee Management:**
   - Administrators can allocate petrol pump machines to employees.
 - **Machine Management:**
