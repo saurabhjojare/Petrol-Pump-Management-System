@@ -5,8 +5,12 @@ import java.util.List;
 import com.petrolpump.admin.model.MachineModel;
 
 public interface MachineRepository {
-	
+
 	public boolean isAddNewMachine(MachineModel model);
+
 	public List<MachineModel> getAllMachine();
 
+	public boolean isDeleteMachineById(int mid);
+
+	public boolean isUpdateMachine(MachineModel model);
 }

@@ -38,6 +38,13 @@ button {
 	gap: 2px;
 }
 
+.icons {
+	color:#000;
+	position:absolute;
+}
+
+
+
 @media ( max-width : 768px) {
 	.sidebar {
 		height: 100%;

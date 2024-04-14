@@ -14,7 +14,8 @@ import com.petrolpump.admin.service.*;
 public class MachineController extends HttpServlet {
     MachineService machineService = new MachineServiceImpl();
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         String machineCode = request.getParameter("machineCode");
@@ -22,14 +23,15 @@ public class MachineController extends HttpServlet {
         model.setMachineCode(machineCode);
         boolean b = machineService.isAddNewMachine(model);
         if (b) {
-            request.setAttribute("message", "Machine Added");
+            request.setAttribute("message", "Pump Added");
         } else {
-            request.setAttribute("message", "Machine Not Added");
+            request.setAttribute("message", "Pump Not Added");
         }
         request.getRequestDispatcher("add-machine.jsp").forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         doGet(request, response);
     }
 

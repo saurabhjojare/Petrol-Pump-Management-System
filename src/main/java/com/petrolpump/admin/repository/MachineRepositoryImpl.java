@@ -29,7 +29,7 @@ public class MachineRepositoryImpl extends DBConfig implements MachineRepository
 	public List<MachineModel> getAllMachine() {
 		try {
 			list = new ArrayList<MachineModel>();
-			stmt=conn.prepareStatement("select * from machineinfo");
+			stmt = conn.prepareStatement("select * from machineinfo");
 			rs = stmt.executeQuery();
 			while (rs.next()) {
 				MachineModel model = new MachineModel();
@@ -37,10 +37,37 @@ public class MachineRepositoryImpl extends DBConfig implements MachineRepository
 				model.setMachineCode(rs.getString(2));
 				list.add(model);
 			}
-			return list.size()>0?list:null;
+			return list.size() > 0 ? list : null;
 		} catch (Exception ex) {
 			System.out.println(ex);
 			return null;
+		}
+	}
+
+	@Override
+	public boolean isDeleteMachineById(int mid) {
+		try {
+			stmt = conn.prepareStatement("delete from machineinfo where mid = ?");
+			stmt.setInt(1, mid);
+			int value = stmt.executeUpdate();
+			return value > 0 ? true : false;
+		} catch (Exception ex) {
+			return false;
+		}
+	}
+
+	@Override
+	public boolean isUpdateMachine(MachineModel model) {
+		try {
+
+			stmt = conn.prepareStatement("update machineinfo set machine_code = ? where mid = ?");
+			stmt.setString(1, model.getMachineCode());
+			stmt.setInt(2, model.getId());
+			int value = stmt.executeUpdate();
+			return value > 0 ? true : false;
+		} catch (Exception ex) {
+			System.out.println(ex);
+			return false;
 		}
 	}
 }

@@ -5,17 +5,15 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <dependencies>
-    <!-- MySQL Connector/J -->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
-      <version>8.0.26</version> <!-- You can update to the latest version -->
+      <version>8.0.26</version> 
     </dependency>
-    <!-- Servlet API -->
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
-      <version>4.0.1</version> <!-- You can update to the latest version -->
+      <version>4.0.1</version> 
       <scope>provided</scope>
     </dependency>
   </dependencies>
