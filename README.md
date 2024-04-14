@@ -19,7 +19,7 @@ The Petrol Pump Management System is a web-based application designed to streaml
 - Servlet
 - JSP (JavaServer Pages)
 - MySQL
-- HTML/CSS (for front-end)
+- HTML/CSS/JavaScript (for front-end)
 
 ## Installation
 1. Clone the repository to your local machine.
