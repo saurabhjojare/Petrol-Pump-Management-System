@@ -22,14 +22,11 @@ public class DeleteMachineController extends HttpServlet {
         MachineService mService = new MachineServiceImpl();
         boolean b = mService.isDeleteMachineById(mid);
         if (b) {
-            // Set success message attribute
             request.setAttribute("successMessage", "Dispensers Deleted");
             RequestDispatcher r = request.getRequestDispatcher("view-machine.jsp");
             r.forward(request, response);
         } else {
-            // Set error message attribute
             request.setAttribute("errorMessage", "Dispensers Not Deleted");
-            // Forward to view-machine.jsp
             RequestDispatcher r = request.getRequestDispatcher("view-machine.jsp");
             r.forward(request, response);
         }
