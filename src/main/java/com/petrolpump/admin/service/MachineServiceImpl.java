@@ -10,12 +10,12 @@ public class MachineServiceImpl implements MachineService {
 
 	MachineRepository m = new MachineRepositoryImpl();
 
-	public boolean isAddNewMachine(MachineModel model) {
-		return m.isAddNewMachine(model);
+	public boolean isAddNewMachine(MachineModel model, String typeid[], String capacity[]) {
+		return m.isAddNewMachine(model, typeid, capacity);
 	}
 
 	@Override
-	public List<MachineModel> getAllMachines() {
+	public List<Object[]> getAllMachines() {
 		return m.getAllMachine();
 	}
 

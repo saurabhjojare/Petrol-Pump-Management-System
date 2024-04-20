@@ -3,6 +3,7 @@
 <%@ page import="com.petrolpump.admin.service.*"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.petrolpump.admin.model.*"%>
+<%@ page import="com.petrolpump.admin.repository.*"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,24 +58,28 @@
 				<tr>
 					<th scope="col">#</th>
 					<th scope="col">Name</th>
+					<th scope="col">Fuel Type</th>
+					<th scope="col">Capacity</th>
 					<th scope="col">Delete</th>
 					<th scope="col">Update</th>
 				</tr>
 			</thead>
 			<tbody>
 				<%
-				List<MachineModel> list = machineService.getAllMachines();
+				List<Object[]> list = machineService.getAllMachines();
 				int count = 0;
 
 				if (list != null) {
-					for (MachineModel m : list) {
+					for (Object obj[] : list) {
 				%>
 				<tr>
 					<th scope="row"><%=++count%></th>
-					<td><%=m.getMachineCode()%></td>
-					<td><a href='delete?machineid=<%=m.getId()%>'>Delete</a></td>
+					<td><%=obj[0]%></td>
+					<td><%=obj[1]%></td>
+					<td><%=obj[2]%></td>
+					<td><a href='delete?machineid=<%=(int)obj[3]%>'>Delete</a></td>
 					<td><a
-						href='update?mid=<%=m.getId()%>&mcode=<%=m.getMachineCode()%>'>Update</a>
+						href='update?mid=<%=(int)obj[3]%>&mcode=<%=obj[0].toString()%>'>Update</a>
 					</td>
 				</tr>
 				<%

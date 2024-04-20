@@ -33,25 +33,35 @@ if (isIndexPage) {
 
 	<!-- Sidebar -->
 	<div class="sidebar">
-		<nav class="navbar navbar-dark">
-			<span class="navbar-brand mb-0 h1 font-weight-bold">Dashboard</span>
-		</nav>
-		<ul class="nav flex-column">
-			<li class="nav-item"><a class="nav-link" data-toggle="collapse"
-				href="#homeSubMenu" role="button" aria-expanded="false"
-				aria-controls="homeSubMenu">Fuel Dispenser</a>
-				<div class="collapse" id="homeSubMenu">
-					<ul class="nav flex-column">
-						<li class="nav-item"><a class="nav-link"
-							href="add-machine.jsp">Add Pumps</a></li>
-						<li class="nav-item"><a class="nav-link"
-							href="view-machine.jsp">View Pumps</a></li>
-					</ul>
-				</div></li>
-			<li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
-		</ul>
-	</div>
+    <nav class="navbar navbar-dark">
+        <span class="navbar-brand mb-0 h1 font-weight-bold"><a href="admin_dashboard.jsp" class = "adminLink">Dashboard</a></span>
+    </nav>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#homeSubMenu" role="button" aria-expanded="false" aria-controls="homeSubMenu">Fuel Dispenser</a>
+            <div class="collapse" id="homeSubMenu">
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="add-machine.jsp">Add Pumps</a></li>
+                    <li class="nav-item"><a class="nav-link" href="view-machine.jsp">View Pumps</a></li>
+                </ul>
+            </div>
+        </li>
+       
+        <!-- New collapsible option -->
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#dispenserTypeSubMenu" role="button" aria-expanded="false" aria-controls="dispenserTypeSubMenu">Dispenser Type</a>
+            <div class="collapse" id="dispenserTypeSubMenu">
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="add-type.jsp">Add Type</a></li>
+                    <li class="nav-item"><a class="nav-link" href="view-type.jsp">View Type</a></li>
+                </ul>
+            </div>
+        </li>
+         <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+    </ul>
+</div>
+
 
 	<%
 	if (isIndexPage) {

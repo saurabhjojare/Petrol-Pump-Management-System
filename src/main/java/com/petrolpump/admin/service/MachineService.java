@@ -6,9 +6,9 @@ import com.petrolpump.admin.model.*;
 
 public interface MachineService {
 
-	public boolean isAddNewMachine(MachineModel model);
+	public boolean isAddNewMachine(MachineModel model, String typeid[], String capacity[]);
 
-	public List<MachineModel> getAllMachines();
+	public List<Object[]> getAllMachines();
 
 	public boolean isDeleteMachineById(int mid);
 

@@ -19,20 +19,29 @@ public class MachineController extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         String machineCode = request.getParameter("machineCode");
+        String ftypeid[] = request.getParameterValues("ftype");
+        String capArray[] = request.getParameterValues("capacity");
         MachineModel model = new MachineModel();
         model.setMachineCode(machineCode);
-        boolean b = machineService.isAddNewMachine(model);
-        if (b) {
-            request.setAttribute("message", "Pump Added");
-        } else {
-            request.setAttribute("message", "Pump Not Added");
+        boolean flag = false;
+
+        try {
+            boolean b = machineService.isAddNewMachine(model, ftypeid, capArray);
+            if (b) {
+                request.setAttribute("message", "Pump Added");
+            } else {
+                request.setAttribute("message", "Pump Not Added");
+            }
+            request.getRequestDispatcher("add-machine.jsp").forward(request, response);
+        } finally {
+            if (out != null) {
+                out.close();
+            }
         }
-        request.getRequestDispatcher("add-machine.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         doGet(request, response);
     }
-
 }
