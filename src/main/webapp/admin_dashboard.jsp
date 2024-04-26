@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%
 String currentPage = request.getRequestURI();
-boolean isIndexPage = currentPage.endsWith("admin_dashboard.jsp");
+boolean isIndexPage = currentPage.equals(request.getContextPath() + "/") || currentPage.endsWith("admin_dashboard.jsp");
 %>
 
 <!DOCTYPE html>
@@ -22,6 +22,9 @@ if (isIndexPage) {
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 	rel="stylesheet">
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 <!-- Custom CSS -->
 <link rel="stylesheet" type="text/css" href="css\style.css">
 <link rel="icon" type="image/png" href="img\favicon.png">
@@ -32,44 +35,95 @@ if (isIndexPage) {
 <body>
 
 	<!-- Sidebar -->
+
 	<div class="sidebar">
-    <nav class="navbar navbar-dark">
-        <span class="navbar-brand mb-0 h1 font-weight-bold"><a href="admin_dashboard.jsp" class = "adminLink">Dashboard</a></span>
-    </nav>
-    <ul class="nav flex-column">
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#homeSubMenu" role="button" aria-expanded="false" aria-controls="homeSubMenu">Fuel Dispenser</a>
-            <div class="collapse" id="homeSubMenu">
-                <ul class="nav flex-column">
-                    <li class="nav-item"><a class="nav-link" href="add-machine.jsp">Add Pumps</a></li>
-                    <li class="nav-item"><a class="nav-link" href="view-machine.jsp">View Pumps</a></li>
-                </ul>
-            </div>
-        </li>
-       
-        <!-- New collapsible option -->
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#dispenserTypeSubMenu" role="button" aria-expanded="false" aria-controls="dispenserTypeSubMenu">Dispenser Type</a>
-            <div class="collapse" id="dispenserTypeSubMenu">
-                <ul class="nav flex-column">
-                    <li class="nav-item"><a class="nav-link" href="add-type.jsp">Add Type</a></li>
-                    <li class="nav-item"><a class="nav-link" href="view-type.jsp">View Type</a></li>
-                </ul>
-            </div>
-        </li>
-         <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
-    </ul>
-</div>
+		<nav class="navbar navbar-dark">
+			<span
+				class="navbar-brand mb-0 h1 font-weight-bold animate__animated animate__fadeInDown"><a
+				href="admin_dashboard.jsp" class="adminLink">Dashboard</a></span>
+		</nav>
+		<ul class="nav flex-column">
+			<li class="nav-item"><a
+				class="nav-link animate__animated animate__fadeInLeft"
+				data-toggle="collapse" href="#homeSubMenu" role="button"
+				aria-expanded="false" aria-controls="homeSubMenu">Fuel Dispenser</a>
+
+				<div class="collapse" id="homeSubMenu">
+					<ul class="nav flex-column">
+						<li class="nav-item"><a class="nav-link"
+							href="add-machine.jsp">Add Pumps</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="view-machine.jsp">View Pumps</a></li>
+					</ul>
+				</div></li>
+
+			<!-- Dispenser Type Dropdown -->
+			<li class="nav-item"><a
+				class="nav-link animate__animated animate__fadeInLeft"
+				data-toggle="collapse" href="#dispenserTypeSubMenu" role="button"
+				aria-expanded="false" aria-controls="dispenserTypeSubMenu">Dispenser
+					Type</a>
+
+				<div class="collapse" id="dispenserTypeSubMenu">
+					<ul class="nav flex-column">
+						<li class="nav-item"><a class="nav-link" href="add-type.jsp">Add
+								Type</a></li>
+						<li class="nav-item"><a class="nav-link" href="view-type.jsp">View
+								Type</a></li>
+					</ul>
+				</div></li>
+
+			<!-- Employee Dropdown -->
+			<li class="nav-item"><a
+				class="nav-link animate__animated animate__fadeInLeft"
+				data-toggle="collapse" href="#employeeSubMenu" role="button"
+				aria-expanded="false" aria-controls="employeeSubMenu">Employee</a>
+				<div class="collapse" id="employeeSubMenu">
+					<ul class="nav flex-column">
+						<li class="nav-item"><a class="nav-link"
+							href="add-employee.jsp">Add Employee</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="view-employee.jsp">View Employee</a></li>
+					</ul>
+				</div></li>
+			<!--
+        <li class="nav-item animate__animated animate__fadeInLeft"><a class="nav-link" href="#">Profile</a></li>
+        <li class="nav-item animate__animated animate__fadeInLeft"><a class="nav-link" href="#">Settings</a></li>
+        -->
+		</ul>
+	</div>
+
 
 
 	<%
 	if (isIndexPage) {
 	%>
 	<!-- Content -->
-	<div class="content">
-		<h1 class="text-center">Welcome to Your Dashboard</h1>
+
+	<div class="content d-flex justify-content-center align-items-center">
+		<div class="login-form p-4" style="width: 400px;">
+			<!-- <h2 class="text-center mb-3 welcomeUser">Welcome</h2> -->
+			<!-- Your login form content goes here -->
+			<form action="login_process.jsp" method="post">
+				<div class="form-group">
+					<label for="username">Username</label> <input type="text"
+						class="form-control" id="username" name="username">
+				</div>
+				<div class="form-group">
+					<label for="password">Password</label> <input type="password"
+						class="form-control" id="password" name="password">
+				</div>
+				<button type="submit" class="btn btn-light btn-block">Login</button>
+			</form>
+			<!-- Sign Up option -->
+			<div class="text-center mt-3">
+				<p>
+					Don't have an account? <a href="signup_page.html">Sign Up</a>
+				</p>
+			</div>
+		</div>
 	</div>
+
 	<%
 	}
 	%>
