@@ -25,3 +25,6 @@ replay_pid*
 
 # Other Folders
 docs/
+.settings/
+.target/
+.build/
