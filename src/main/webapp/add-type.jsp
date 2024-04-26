@@ -31,11 +31,7 @@
                                 aria-label="Enter your text here" aria-describedby="button-addon">
                         </div>
                         <div class="text-center mt-3">
-<<<<<<< HEAD
                             <button class="btn btn-light" type="submit" value="Submit" id="button-addon">Add Type</button>
-=======
-                            <button class="btn btn-light" type="submit" value="Submit" id="button-addon">Add</button>
->>>>>>> 922f3e42ba33c3984688868195c65cb1f732ff5b
                         </div>
                         <br>
 
