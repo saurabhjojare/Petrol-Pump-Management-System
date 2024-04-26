@@ -1,0 +1,67 @@
+.sidebar {
+	height: 100%;
+	width: 250px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #333333;
+	padding-top: 50px; 
+}
+
+.content {
+	margin-left: 250px;
+	padding: 20px;
+}
+
+.nav-link {
+	display: block;
+	padding: .5rem 1rem;
+	color: #fff;
+}
+
+.nav-link:hover {
+	display: block;
+	padding: .5rem 1rem;
+	color: #fff;
+}
+
+.adminLink{
+	color: #fff;
+}
+
+.adminLink:hover{
+	color: #fff;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+button {
+	gap: 2px;
+}
+
+.icons {
+	color:#000;
+	position:absolute;
+}
+
+@media ( max-width : 768px) {
+	.sidebar {
+		height: 100%;
+		width: 180px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: #333333;
+		padding-top: 50px; 
+	}
+	.content {
+		margin-left: 180px; 
+		padding: 20px;
+	}
+}
