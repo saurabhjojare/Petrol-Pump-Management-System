@@ -55,7 +55,9 @@
 		<h3 id="dispensersHeading">Available Dispensers</h3>
 		<table class="table">
 			<thead>
-				<tr>
+
+				<tr class="empTableDesktop">
+
 					<th scope="col">#</th>
 					<th scope="col">Name</th>
 					<th scope="col">Fuel Type</th>
@@ -69,10 +71,14 @@
 				List<Object[]> list = machineService.getAllMachines();
 				int count = 0;
 
+				int count2 = 0; 
+
 				if (list != null) {
 					for (Object obj[] : list) {
 				%>
-				<tr>
+
+				<tr class="empTableDesktop">
+
 					<th scope="row"><%=++count%></th>
 					<td><%=obj[0]%></td>
 					<td><%=obj[1]%></td>
@@ -82,6 +88,36 @@
 						href='update?mid=<%=(int)obj[3]%>&mcode=<%=obj[0].toString()%>'>Update</a>
 					</td>
 				</tr>
+				
+				<tr class="empTableMobile">
+					<td scope="col" class = "font-weight-bold" style="border:none">#</td>
+					<td style="border:none"><%=++count2%></td>
+				</tr>
+				
+				<tr class="empTableMobile">
+					<td class = "font-weight-bold">Name</td>
+					<td><%=obj[0]%></td>
+				</tr>
+				<tr class="empTableMobile">
+					<td class = "font-weight-bold">Fuel Type</td>
+					<td><%=obj[1]%></td>
+				</tr>
+				<tr class="empTableMobile">
+					<td class = "font-weight-bold">Capacity</td>
+					<td><a href="#"><%=obj[2]%></a></td>
+				</tr>
+				<tr class="empTableMobile">
+					<td class = "font-weight-bold">Update</td>
+					<td><a href='update?mid=<%=(int)obj[3]%>&mcode=<%=obj[0].toString()%>'>Update</a></td>
+				</tr>
+				<tr class="empTableMobile">
+					<td class = "font-weight-bold">Delete</td>
+					<td><a href='delete?machineid=<%=(int)obj[3]%>'>Delete</a></td>
+				</tr>
+				<tr class="empTableMobile emptyRow">
+					<td colspan="2"></td>
+				</tr>
+
 				<%
 				}
 				}
