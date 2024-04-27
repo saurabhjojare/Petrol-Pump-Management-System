@@ -91,28 +91,28 @@
 				
 				<tr class="empTableMobile">
 					<td scope="col" class = "font-weight-bold" style="border:none">#</td>
-					<td style="border:none"><%=++count2%></td>
+					<td class="text-right" style = "border:none"><%=++count2%></td>
 				</tr>
 				
 				<tr class="empTableMobile">
-					<td class = "font-weight-bold">Name</td>
-					<td><%=obj[0]%></td>
+					<td class = "font-weight-bold widthAuto" style = "width: auto;">Name</td>
+					<td class="text-right"><%=obj[0]%></td>
 				</tr>
 				<tr class="empTableMobile">
 					<td class = "font-weight-bold">Fuel Type</td>
-					<td><%=obj[1]%></td>
+					<td class="text-right"><%=obj[1]%></td>
 				</tr>
 				<tr class="empTableMobile">
 					<td class = "font-weight-bold">Capacity</td>
-					<td><a href="#"><%=obj[2]%></a></td>
+					<td class="text-right"><%=obj[2]%></td>
 				</tr>
 				<tr class="empTableMobile">
 					<td class = "font-weight-bold">Update</td>
-					<td><a href='update?mid=<%=(int)obj[3]%>&mcode=<%=obj[0].toString()%>'>Update</a></td>
+					<td class="text-right"><a href='update?mid=<%=(int)obj[3]%>&mcode=<%=obj[0].toString()%>'>Update</a></td>
 				</tr>
 				<tr class="empTableMobile">
 					<td class = "font-weight-bold">Delete</td>
-					<td><a href='delete?machineid=<%=(int)obj[3]%>'>Delete</a></td>
+					<td class="text-right"><a href='delete?machineid=<%=(int)obj[3]%>'>Delete</a></td>
 				</tr>
 				<tr class="empTableMobile emptyRow">
 					<td colspan="2"></td>
