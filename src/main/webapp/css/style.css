@@ -5,7 +5,7 @@
 	top: 0;
 	left: 0;
 	background-color: #333333;
-	padding-top: 50px; 
+	padding-top: 50px;
 }
 
 .content {
@@ -25,11 +25,11 @@
 	color: #fff;
 }
 
-.adminLink{
+.adminLink {
 	color: #fff;
 }
 
-.adminLink:hover{
+.adminLink:hover {
 	color: #fff;
 }
 
@@ -46,8 +46,16 @@ button {
 }
 
 .icons {
-	color:#000;
-	position:absolute;
+	color: #000;
+	position: absolute;
+}
+
+.empTableMobile {
+	display: none;
+}
+
+.contentinner{
+	width:400px
 }
 
 @media ( max-width : 768px) {
@@ -58,10 +66,18 @@ button {
 		top: 0;
 		left: 0;
 		background-color: #333333;
-		padding-top: 50px; 
+		padding-top: 50px;
 	}
+	
 	.content {
-		margin-left: 180px; 
+		margin-left: 180px;
 		padding: 20px;
+	}
+	.empTableMobile {
+		display: block;
+	}
+
+	.empTableDesktop {
+		display: none;
 	}
 }
