@@ -100,28 +100,8 @@ if (isIndexPage) {
 	%>
 	<!-- Content -->
 
-	<div class="content d-flex justify-content-center align-items-center">
-		<div class="login-form p-4" style="width: 400px;">
-			<!-- <h2 class="text-center mb-3 welcomeUser">Welcome</h2> -->
-			<!-- Your login form content goes here -->
-			<form action="login_process.jsp" method="post">
-				<div class="form-group">
-					<label for="username">Username</label> <input type="text"
-						class="form-control" id="username" name="username">
-				</div>
-				<div class="form-group">
-					<label for="password">Password</label> <input type="password"
-						class="form-control" id="password" name="password">
-				</div>
-				<button type="submit" class="btn btn-light btn-block">Login</button>
-			</form>
-			<!-- Sign Up option -->
-			<div class="text-center mt-3">
-				<p>
-					Don't have an account? <a href="signup_page.html">Sign Up</a>
-				</p>
-			</div>
-		</div>
+	<div class="content">
+			<h1 class ="text-center">Welcome to Your Dashboard</h1>
 	</div>
 
 	<%
