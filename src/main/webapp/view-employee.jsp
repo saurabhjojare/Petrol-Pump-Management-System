@@ -11,7 +11,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>View Employee</title>
+<title>View Pumps</title>
 
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -55,59 +55,64 @@
 		<h3 id="dispensersHeading">Available Dispensers</h3>
 		<table class="table">
 			<thead>
+
 				<tr class="empTableDesktop">
-					<th scope="col" style="border-top: none">#</th>
-					<th scope="col" style="border-top: none">Name</th>
-					<th scope="col" style="border-top: none">Contact</th>
-					<th scope="col" style="border-top: none">Allocate Machine</th>
-					<th scope="col" style="border-top: none">Delete</th>
-					<th scope="col" style="border-top: none">Update</th>
+
+					<th scope="col">#</th>
+					<th scope="col">Name</th>
+					<th scope="col">Fuel Type</th>
+					<th scope="col">Capacity</th>
+					<th scope="col">Delete</th>
+					<th scope="col">Update</th>
 				</tr>
 			</thead>
 			<tbody>
 				<%
-				EmployeeService empService = new EmployeeServiceImpl();
-				List<EmployeeModel> list = empService.getAllEmployees();
+				List<Object[]> list = machineService.getAllMachines();
 				int count = 0;
-				int count2 = 0;
+
+				int count2 = 0; 
 
 				if (list != null) {
-					for (EmployeeModel eModel : list) {
+					for (Object obj[] : list) {
 				%>
-				<tr class="empTableDesktop">
-					<th scope="row"><%=++count%></th>
-					<td><%=eModel.getName()%></td>
-					<!-- Corrected -->
-					<td><%=eModel.getContact()%></td>
-					<td><a href='allocatemachine?empid=<%=eModel.getId()%>&empName=<%=eModel.getName()%>'>Allocate Machine</a></td>
-					<td><a href=''>Delete</a></td>
-					<td><a href=''>Update</a></td>
-				</tr>
 
-				<tr class="empTableMobile">
-					<td scope="col" class = "font-weight-bold" style="border:none">#</td>
-					<td style="border:none"><%=++count2%></td>
+				<tr class="empTableDesktop">
+
+					<th scope="row"><%=++count%></th>
+					<td><%=obj[0]%></td>
+					<td><%=obj[1]%></td>
+					<td><%=obj[2]%></td>
+					<td><a href='delete?machineid=<%=(int)obj[3]%>'>Delete</a></td>
+					<td><a
+						href='update?mid=<%=(int)obj[3]%>&mcode=<%=obj[0].toString()%>'>Update</a>
+					</td>
 				</tr>
 				
 				<tr class="empTableMobile">
-					<td class = "font-weight-bold">Name</td>
-					<td><%=eModel.getName()%></td>
+					<td scope="col" class = "font-weight-bold" style="border:none">#</td>
+					<td class="text-right" style = "border:none"><%=++count2%></td>
+				</tr>
+				
+				<tr class="empTableMobile">
+					<td class = "font-weight-bold widthAuto" style = "width: auto;">Name</td>
+					<td class="text-right"><%=obj[0]%></td>
 				</tr>
 				<tr class="empTableMobile">
-					<td class = "font-weight-bold">Contact</td>
-					<td><%=eModel.getContact()%></td>
+					<td class = "font-weight-bold">Fuel Type</td>
+					<td class="text-right"><%=obj[1]%></td>
 				</tr>
 				<tr class="empTableMobile">
-					<td class = "font-weight-bold">Allocate Machine</td>
-					<td><a href="#">Allocate</a></td>
+					<td class = "font-weight-bold">Capacity</td>
+					<td class="text-right"><%=obj[2]%></td>
 				</tr>
 				<tr class="empTableMobile">
 					<td class = "font-weight-bold">Update</td>
-					<td><a href="#">Update</a></td>
+					<td class="text-right"><a href='update?mid=<%=(int)obj[3]%>&mcode=<%=obj[0].toString()%>'>Update</a></td>
 				</tr>
 				<tr class="empTableMobile">
 					<td class = "font-weight-bold">Delete</td>
-					<td><a href="#">Delete</a></td>
+					<td class="text-right"><a href='delete?machineid=<%=(int)obj[3]%>'>Delete</a></td>
 				</tr>
 				<tr class="empTableMobile emptyRow">
 					<td colspan="2"></td>
@@ -118,6 +123,7 @@
 				}
 				%>
 			</tbody>
+
 		</table>
 	</div>
 
@@ -157,4 +163,5 @@
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
